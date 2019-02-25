@@ -57,12 +57,7 @@ template<class T> MyList<T>::MyList() {
 }
 
 template<class T> MyList<T>::~MyList() {
-    while (head != nullptr){ //Will be delete node while -//-
-        cursor = head->next;
-        delete head;
-        head = cursor;
-    }
-    size = 0;
+    Clear();
 }
 
 template<class T> void MyList<T>::PushFront(T elem) {
