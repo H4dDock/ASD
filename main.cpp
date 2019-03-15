@@ -8,9 +8,14 @@ int main(int argc, char* argv[]) {
     exampleInt.PushBack(1);
     exampleInt.PushBack(2);
     exampleInt.PushBack(3);
+    cout << "After entered list: ";
+    exampleInt.Show();
     exampleInt.Remove(0);
     exampleInt.PopBack();
+    cout << "After removed 0, PopBack: ";
+    exampleInt.Show();
     exampleInt.Set(10,0);
+    cout << "After set(10,0): ";
     cout << exampleInt << endl;*/
 
     /*MyList<char> exampleInt;

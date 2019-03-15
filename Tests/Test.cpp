@@ -12,19 +12,21 @@ namespace {
     class ClassDeclaration : public testing::Test{
     public:
         MyList<int> testExample;
+        MyList<char> testExampleChar;
         ClassDeclaration(){
             testExample;
+            testExampleChar;
         }
     };
 }
 
 TEST_F(ClassDeclaration, PushBackTest){
-    ASSERT_EQ(nullptr,testExample.ToArr()); //Check that list is empty
-    int expect[] = {1,2,3};
-    testExample.PushBack(1);
-    testExample.PushBack(2);
-    testExample.PushBack(3);
-    int *result = testExample.ToArr();
+    ASSERT_EQ(nullptr,testExampleChar.ToArr()); //Check that list is empty
+    int expect[] = {'1','2','3'};
+    testExampleChar.PushBack('1');
+    testExampleChar.PushBack('2');
+    testExampleChar.PushBack('3');
+    char *result = testExampleChar.ToArr();
     for ( unsigned int i = 0; i < 3; ++i )
         ASSERT_EQ(expect[i], result[i]); //Check normal work PushBack {1,2,3}
     delete result, expect, testExample;
